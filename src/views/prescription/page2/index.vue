@@ -38,25 +38,25 @@
       </el-dialog>
       <el-aside width="650px">
         处方预览：<br /><br />
-        <d2-ueditor />
+        <d2-ueditor v-model="preview" />
       </el-aside>
       <el-main>
         病人信息：
         <el-form v-model="prescription.patient">
           <el-form-item label="姓名">
-            <el-input v-model="prescription.patient.name"></el-input>
+            <el-input v-model="prescription.patient.name" v-on:change="makePreview"></el-input>
           </el-form-item>
           <el-form-item label="性别">
-            <el-select v-model="prescription.patient.gender">
+            <el-select v-model="prescription.patient.gender" v-on:change="makePreview">
               <el-option value="男"></el-option>
               <el-option value="女"></el-option>
             </el-select>
           </el-form-item>
-          <el-form-item label="年龄">
-            <el-input-number v-model="prescription.patient.age" :min=0></el-input-number>
+          <el-form-item label="年龄" v-on:change="makePreview">
+            <el-input-number v-model="prescription.patient.age" :min=0 v-on:change="makePreview"></el-input-number>
           </el-form-item>
           <el-form-item label="诊断">
-            <el-input v-model="prescription.patient.diagnosis"></el-input>
+            <el-input v-model="prescription.patient.diagnosis" v-on:change="makePreview"></el-input>
           </el-form-item>
         </el-form>
         <el-button @click="medicineDialogVisible = true" type="primary">搜索与添加药品</el-button><br /><br />
@@ -103,7 +103,8 @@ export default {
       numberDialogForm: {
         id: 0,
         number: 1
-      }
+      },
+      preview: '<p style="text-align: right;">普通处方&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/></p><p style="text-align: center;"><span style="font-size: 24px;"><strong>临渭区社区卫生服务中心（站）门诊处方笺</strong></span></p><table data-sort="sortDisabled" width="605"><tbody><tr class="firstRow"><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">姓名：<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">性别：<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">年龄：<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">费别:<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">科别：<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">时间：<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">处方编号：<br/></td><td style="border-color: rgb(255, 255, 255);" rowspan="1" colspan="2" valign="top"><br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">门诊号：<br/></td><td style="border-color: rgb(255, 255, 255);" rowspan="1" colspan="2" valign="top"><br/></td></tr></tbody></table><hr/><table><tbody><tr class="firstRow"><td style="word-break: break-all; border-color: rgb(255, 255, 255);" width="80.33333333333333" valign="top">临床诊断：<br/></td><td style="border-color: rgb(255, 255, 255);" width="498.3333333333333" valign="top"><br/></td></tr></tbody></table><hr/><p><span style="font-size: 36px;"><strong>R</strong></span></p><table width="596"><tbody><tr class="firstRow"><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr></tbody></table><table width="605"><tbody><tr class="firstRow"><td style="border-color: rgb(0, 0, 0);" width="151" valign="middle" align="center">医师签名<br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="top"><br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="middle" align="center">审核调配药师<br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="top"><br/></td></tr><tr><td style="border-color: rgb(0, 0, 0);" width="151" valign="middle" align="center">药品费<br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="top"><br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="middle" align="center">复核发药药师<br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="top"><br/></td></tr></tbody></table><p><br/></p>'
     }
   },
   computed: {
@@ -121,8 +122,23 @@ export default {
       })
     },
     isFormValid () {
-      // TO-DO
-      // 这里验证表达是不是合法
+      let flag = true
+      if (this.prescription.patient.name === '') {
+        flag = false
+      }
+      if (this.prescription.patient.gender === '') {
+        flag = false
+      }
+      if (typeof (this.prescription.patient.age) === 'undefined') {
+        flag = false
+      }
+      if (this.prescription.patient.dosage === '') {
+        flag = false
+      }
+      if (this.prescription.selectedMedicine.length === 0) {
+        flag = false
+      }
+      return flag
     },
     addMedicine (id) {
       function isExist (arr, v) {
@@ -154,6 +170,7 @@ export default {
           break
         }
       }
+      this.makePreview()
     },
     handleNumberDialogAccept () {
       this.prescription.selectedMedicine.push({
@@ -174,6 +191,21 @@ export default {
         }
       }
       this.numberDialogVisible = false
+      this.makePreview()
+    },
+    makePreview () {
+      // 预览要建好
+      // 这依赖Windows平台上的格式测试
+      // aside的宽度也许需要调整
+      this.preview = '<p style="text-align: right;">普通处方&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/></p><p style="text-align: center;"><span style="font-size: 24px;"><strong>临渭区社区卫生服务中心（站）门诊处方笺</strong></span></p><table data-sort="sortDisabled" width="605"><tbody><tr class="firstRow"><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">姓名：<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">性别：<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">年龄：<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">费别:<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">科别：<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">时间：<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">处方编号：<br/></td><td style="border-color: rgb(255, 255, 255);" rowspan="1" colspan="2" valign="top"><br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">门诊号：<br/></td><td style="border-color: rgb(255, 255, 255);" rowspan="1" colspan="2" valign="top"><br/></td></tr></tbody></table><hr/><table><tbody><tr class="firstRow"><td style="word-break: break-all; border-color: rgb(255, 255, 255);" width="80.33333333333333" valign="top">临床诊断：<br/></td><td style="border-color: rgb(255, 255, 255);" width="498.3333333333333" valign="top"><br/></td></tr></tbody></table><hr/><p><span style="font-size: 36px;"><strong>R</strong></span></p><table width="596"><tbody><tr class="firstRow"><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr></tbody></table><table width="605"><tbody><tr class="firstRow"><td style="border-color: rgb(0, 0, 0);" width="151" valign="middle" align="center">医师签名<br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="top"><br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="middle" align="center">审核调配药师<br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="top"><br/></td></tr><tr><td style="border-color: rgb(0, 0, 0);" width="151" valign="middle" align="center">药品费<br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="top"><br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="middle" align="center">复核发药药师<br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="top"><br/></td></tr></tbody></table><p><br/></p>'
+    },
+    addPrescription () {
+      if (this.isFormValid()) {
+        this.$store.commit('prescription/prescription/addPrescriptionData', this.prescription)
+        this.$alert('已提交')
+      } else {
+        this.$message('内容或格式错误，无法提交')
+      }
     },
     updateMedicineData () {
       this.$store.commit('medicine/medicine/fetchMedicineData')
