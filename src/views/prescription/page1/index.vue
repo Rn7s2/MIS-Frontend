@@ -21,7 +21,7 @@
         </template>
       </el-table-column>
     </el-table>
-    <el-dialog title="查看处方" :visible.sync="viewDialogVisible" width="650px">
+    <el-dialog title="查看处方" :visible.sync="viewDialogVisible" width="720px">
       <d2-ueditor v-model="preview" />
     </el-dialog>
   </d2-container>
@@ -36,7 +36,7 @@ export default {
     return {
       str: '',
       tableData: [],
-      preview: '',
+      preview: '<p style="text-align: right;"><span style="font-family: 宋体, SimSun; font-size: 18px;">普通处方&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; </span><span style="font-family: 宋体, SimSun;"><br/></span></p><p style="text-align: center;"><span style="font-family: 宋体, SimSun; font-size: 28px;"><strong>临渭区社区卫生服务中心（站）门诊处方笺</strong></span></p><table data-sort="sortDisabled" width="637"><tbody><tr class="firstRow"><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">姓名：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">性别：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">年龄：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td></tr><tr><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">费别:<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">科别：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">时间：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td></tr><tr><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">处方号：<br/></span></td><td style="border-color: rgb(0, 0, 0);" rowspan="1" colspan="2" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">门诊号：<br/></span></td><td style="border-color: rgb(0, 0, 0);" rowspan="1" colspan="2" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td></tr><tr><td rowspan="1" colspan="1" style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">诊断：<br/></span></td><td rowspan="1" colspan="5" style="border-color: rgb(0, 0, 0);" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td></tr></tbody></table><p><span style="font-size: 48px; font-family: 宋体, SimSun;"><strong>R</strong></span></p><table width="637"><tbody><tr class="firstRow"><td style="border-color: rgb(255, 255, 255);" width="636" valign="top"><span style="font-family: 宋体, SimSun; font-size: 24px;"><br/></span></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="636" valign="top"><span style="font-family: 宋体, SimSun; font-size: 24px;"><br/></span></td></tr></tbody></table><table width="637"><tbody><tr class="firstRow"><td style="border-color: rgb(255, 255, 255);" width="636" valign="top"><span style="font-family: 宋体, SimSun; font-size: 24px;"><br/></span></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="636" valign="top"><span style="font-family: 宋体, SimSun; font-size: 24px;"><br/></span></td></tr></tbody></table><table width="637"><tbody><tr class="firstRow"><td style="border-color: rgb(255, 255, 255);" width="636" valign="top"><span style="font-family: 宋体, SimSun; font-size: 24px;"><br/></span></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="636" valign="top"><span style="font-family: 宋体, SimSun; font-size: 24px;"><br/></span></td></tr></tbody></table><table width="637"><tbody><tr class="firstRow"><td style="border-color: rgb(255, 255, 255);" width="636" valign="top"><span style="font-family: 宋体, SimSun; font-size: 24px;"><br/></span></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="636" valign="top"><span style="font-family: 宋体, SimSun; font-size: 24px;"><br/></span></td></tr></tbody></table><table width="637"><tbody><tr class="firstRow"><td style="border-color: rgb(255, 255, 255);" width="636" valign="top"><span style="font-family: 宋体, SimSun; font-size: 24px;"><br/></span></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="636" valign="top"><span style="font-family: 宋体, SimSun; font-size: 24px;"><br/></span></td></tr></tbody></table><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><table width="637"><tbody><tr class="firstRow"><td style="border-color: rgb(0, 0, 0);" width="159" valign="middle" align="center"><span style="font-family: 宋体, SimSun; font-size: 20px;">医师签名：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="133" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td><td style="border-color: rgb(0, 0, 0);" width="212" valign="middle" align="center"><span style="font-family: 宋体, SimSun; font-size: 20px;">审核调配药师：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="133" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td></tr><tr><td style="border-color: rgb(0, 0, 0);" width="159" valign="middle" align="center"><span style="font-family: 宋体, SimSun; font-size: 20px;">药品费：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="133" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td><td style="border-color: rgb(0, 0, 0);" width="212" valign="middle" align="center"><span style="font-family: 宋体, SimSun; font-size: 20px;">复核发药药师：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="133" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td></tr></tbody></table>',
       viewDialogVisible: false
     }
   },
@@ -46,6 +46,9 @@ export default {
   computed: {
     prescriptionList () {
       return this.$store.getters['prescription/prescription/getPrescriptionListData']
+    },
+    allMedicineData () {
+      return this.$store.getters['medicine/medicine/getAllMedicine']
     }
   },
   methods: {
@@ -55,10 +58,83 @@ export default {
       })
     },
     makePreview (prescription) {
-      // 预览要建好
-      // 这依赖Windows平台上的格式测试
-      // aside的宽度也许需要调整
-      this.preview = '<p style="text-align: right;">普通处方&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/></p><p style="text-align: center;"><span style="font-size: 24px;"><strong>临渭区社区卫生服务中心（站）门诊处方笺</strong></span></p><table data-sort="sortDisabled" width="605"><tbody><tr class="firstRow"><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">姓名：<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">性别：<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">年龄：<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">费别:<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">科别：<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">时间：<br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">处方编号：<br/></td><td style="border-color: rgb(255, 255, 255);" rowspan="1" colspan="2" valign="top"><br/></td><td style="border-color: rgb(255, 255, 255);" width="101" valign="top">门诊号：<br/></td><td style="border-color: rgb(255, 255, 255);" rowspan="1" colspan="2" valign="top"><br/></td></tr></tbody></table><hr/><table><tbody><tr class="firstRow"><td style="word-break: break-all; border-color: rgb(255, 255, 255);" width="80.33333333333333" valign="top">临床诊断：<br/></td><td style="border-color: rgb(255, 255, 255);" width="498.3333333333333" valign="top"><br/></td></tr></tbody></table><hr/><p><span style="font-size: 36px;"><strong>R</strong></span></p><table width="596"><tbody><tr class="firstRow"><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr><tr><td style="border-color: rgb(255, 255, 255);" width="595" valign="top"><br/></td></tr></tbody></table><table width="605"><tbody><tr class="firstRow"><td style="border-color: rgb(0, 0, 0);" width="151" valign="middle" align="center">医师签名<br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="top"><br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="middle" align="center">审核调配药师<br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="top"><br/></td></tr><tr><td style="border-color: rgb(0, 0, 0);" width="151" valign="middle" align="center">药品费<br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="top"><br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="middle" align="center">复核发药药师<br/></td><td style="border-color: rgb(0, 0, 0);" width="151" valign="top"><br/></td></tr></tbody></table><p><br/></p>'
+      this.preview = '<p style="text-align: right;"><span style="font-family: 宋体, SimSun; font-size: 18px;">普通处方&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; </span><span style="font-family: 宋体, SimSun;"><br/></span></p><p style="text-align: center;"><span style="font-family: 宋体, SimSun; font-size: 28px;"><strong>临渭区社区卫生服务中心（站）门诊处方笺</strong></span></p><table data-sort="sortDisabled" width="637"><tbody><tr class="firstRow"><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">姓名：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">性别：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">年龄：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td></tr><tr><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">费别:<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">科别：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">时间：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td></tr><tr><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">处方号：<br/></span></td><td style="border-color: rgb(0, 0, 0);" rowspan="1" colspan="2" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td><td style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">门诊号：<br/></span></td><td style="border-color: rgb(0, 0, 0);" rowspan="1" colspan="2" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td></tr><tr><td rowspan="1" colspan="1" style="border-color: rgb(0, 0, 0);" width="85" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;">诊断：<br/></span></td><td rowspan="1" colspan="5" style="border-color: rgb(0, 0, 0);" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td></tr></tbody></table><p><span style="font-size: 48px; font-family: 宋体, SimSun;"><strong>R</strong></span></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><table width="637"><tbody><tr class="firstRow"><td style="border-color: rgb(0, 0, 0);" width="159" valign="middle" align="center"><span style="font-family: 宋体, SimSun; font-size: 20px;">医师签名：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="133" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td><td style="border-color: rgb(0, 0, 0);" width="212" valign="middle" align="center"><span style="font-family: 宋体, SimSun; font-size: 20px;">审核调配药师：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="133" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td></tr><tr><td style="border-color: rgb(0, 0, 0);" width="159" valign="middle" align="center"><span style="font-family: 宋体, SimSun; font-size: 20px;">药品费：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="133" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td><td style="border-color: rgb(0, 0, 0);" width="212" valign="middle" align="center"><span style="font-family: 宋体, SimSun; font-size: 20px;">复核发药药师：<br/></span></td><td style="border-color: rgb(0, 0, 0);" width="133" valign="top"><span style="font-family: 宋体, SimSun; font-size: 20px;"><br/></span></td></tr></tbody></table>'
+      function getContentPosition (text, str) {
+        let cnt = 0
+        const ret = {
+          begin: -1,
+          end: -1
+        }
+        for (let i = text.indexOf(str + '<br/></span>'); i < text.length; i++) {
+          if (text[i] === '>') {
+            cnt++
+          }
+          if (cnt === 5 && ret.begin === -1) {
+            ret.begin = (i + 1)
+          }
+          if (cnt === 7) {
+            ret.end = (i - 6)
+            break
+          }
+        }
+        return ret
+      }
+
+      function setContent (text, str, val) {
+        const pos = getContentPosition(text, str)
+        if (pos.begin !== -1 && pos.end !== -1) {
+          text = text.slice(0, pos.begin).concat(val).concat(text.slice(pos.end))
+        }
+        return text
+      }
+
+      let totalPrice = 0.0
+      const medicineList = []
+
+      for (let i = 0; i < prescription.selectedMedicine.length; i++) {
+        for (let j = 0; j < this.allMedicineData.length; j++) {
+          if (this.allMedicineData[j].id === prescription.selectedMedicine[i].id) {
+            medicineList.push({
+              name: this.allMedicineData[j].name,
+              number: prescription.selectedMedicine[i].number,
+              unit: this.allMedicineData[j].unit,
+              dosage: this.allMedicineData[j].dosage,
+              price: this.allMedicineData[j].price
+            })
+            totalPrice += 1.0 * prescription.selectedMedicine[i].number * this.allMedicineData[j].price
+            break
+          }
+        }
+      }
+
+      setTimeout(() => {
+        this.preview = setContent(this.preview, '姓名：', prescription.patient.name)
+        this.preview = setContent(this.preview, '性别：', prescription.patient.gender)
+        this.preview = setContent(this.preview, '年龄：', prescription.patient.age)
+        this.preview = setContent(this.preview, '时间：', prescription.date)
+        this.preview = setContent(this.preview, '处方号：', prescription.id)
+        this.preview = setContent(this.preview, '门诊号：', prescription.recordID)
+        this.preview = setContent(this.preview, '诊断：', prescription.patient.diagnosis)
+        this.preview = setContent(this.preview, '药品费：', totalPrice)
+
+        let itemTable = ''
+        let whiteTable = ''
+        for (let i = 0; i < medicineList.length; i++) {
+          itemTable += '<table width="637"><tbody>'
+          itemTable += '<tr class="firstRow"><td style="border-color: rgb(255, 255, 255);" width="636" valign="top"><span style="font-family: 宋体, SimSun; font-size: 24px;">' + '    ' + medicineList[i].name + ' x' + medicineList[i].number + ' ' + medicineList[i].unit + '</span></td></tr>'
+          itemTable += '<tr class="firstRow"><td style="border-color: rgb(255, 255, 255);" width="636" valign="top"><span style="font-family: 宋体, SimSun; font-size: 24px;">' + '      ' + medicineList[i].dosage + '</span></td></tr>'
+          itemTable += '</tbody></table>'
+        }
+        for (let i = 0; i < 5 - medicineList.length; i++) {
+          whiteTable += '<table width="637"><tbody>'
+          whiteTable += '<tr class="firstRow"><td style="border-color: rgb(255, 255, 255);" width="636" valign="top"><span style="font-family: 宋体, SimSun; font-size: 24px;"><br/></span></td></tr>'
+          whiteTable += '<tr class="firstRow"><td style="border-color: rgb(255, 255, 255);" width="636" valign="top"><span style="font-family: 宋体, SimSun; font-size: 24px;"><br/></span></td></tr>'
+          whiteTable += '</tbody></table>'
+        }
+
+        const itemTableBeginPos = this.preview.indexOf('</p>', this.preview.indexOf('<strong>R</strong>')) + 4
+        this.preview = this.preview.slice(0, itemTableBeginPos).concat(itemTable.concat(whiteTable)).concat(this.preview.slice(itemTableBeginPos))
+      }, GLOBAL_TIMEOUT)
     },
     handleClick (id, operation) {
       if (operation === 0) {
@@ -75,6 +151,7 @@ export default {
       }
     },
     updateData () {
+      this.$store.commit('medicine/medicine/fetchMedicineData')
       this.$store.commit('prescription/prescription/fetchPrescriptionListData')
       setTimeout(() => {
         this.tableData = this.prescriptionList

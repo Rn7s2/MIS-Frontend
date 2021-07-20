@@ -36,7 +36,8 @@ function deletePrescriptionMock () {
 function getPrescriptionByIDMock () {
   return {
     id: 2,
-    recordID: 0,
+    recordID: 1,
+    date: '2021-07-17',
     patient: {
       name: '李四',
       gender: '男',
