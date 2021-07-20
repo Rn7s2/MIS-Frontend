@@ -7,14 +7,17 @@ import {
   addPrescription,
   getPrescriptionList,
   deletePrescription,
-  getPrescriptionByID
+  getPrescriptionByID,
+  getPendingPrescriptionList,
+  handlePrescription
 } from '@/api/prescription'
 
 export default {
   namespaced: true,
   state: {
     prescriptionList: [],
-    prescriptionData: {}
+    prescriptionData: {},
+    pendingPrescriptionList: []
   },
   mutations: {
     fetchPrescriptionListData (state) {
@@ -32,6 +35,14 @@ export default {
     },
     deletePrescriptionData (state, data) {
       deletePrescription(data)
+    },
+    fetchPendingPrescriptionList (state) {
+      getPendingPrescriptionList().then(res => {
+        state.pendingPrescriptionList = res
+      })
+    },
+    handlePrescriptionData (state, data) {
+      handlePrescription(data)
     }
   },
   getters: {
@@ -40,6 +51,9 @@ export default {
     },
     getPrescriptionByIDData: state => {
       return state.prescriptionData
+    },
+    getPendingPrescriptionList: state => {
+      return state.pendingPrescriptionList
     }
   }
 }

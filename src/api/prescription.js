@@ -57,10 +57,38 @@ function getPrescriptionByIDMock () {
   }
 }
 
+function getPendingPrescriptionListMock () {
+  return [
+    {
+      id: 2,
+      recordID: 1,
+      isHandled: 0,
+      date: '2021-07-17',
+      patient: {
+        name: '李四',
+        gender: '男',
+        age: 25,
+        diagnosis: '没啥毛病'
+      },
+      selectedMedicine: [
+        {
+          id: 1,
+          number: 2
+        },
+        {
+          id: 2,
+          number: 1
+        }
+      ]
+    }
+  ]
+}
+
 Mock.mock('/api/prescription/addPrescription', 'post', addPrescriptionMock)
 Mock.mock('/api/prescription/getPrescriptionList', 'get', getPrescriptionListMock)
 Mock.mock('/api/prescription/deletePrescription', 'post', deletePrescriptionMock)
 Mock.mock('/api/prescription/getPrescriptionByID', 'post', getPrescriptionByIDMock)
+Mock.mock('/api/prescription/getPendingPrescriptionList', 'get', getPendingPrescriptionListMock)
 /// mock 结束
 
 /// 接口开始
@@ -91,6 +119,8 @@ export function deletePrescription (data) {
 /* response: {
   id,                   // 处方编号
   recordID,             // 所属病历编号
+  isHandled,            // 是否已经出库
+  date,
   patient: {
     name: '',
     gender: '男',
@@ -103,6 +133,21 @@ export function deletePrescription (data) {
 export function getPrescriptionByID (data) {
   return request({
     url: '/prescription/getPrescriptionByID',
+    method: 'post',
+    data: data
+  })
+}
+
+export function getPendingPrescriptionList () {
+  return request({
+    url: '/prescription/getPendingPrescriptionList',
+    method: 'get'
+  })
+}
+
+export function handlePrescription (data) {
+  return request({
+    url: '/prescription/prescription/handlePrescription',
     method: 'post',
     data: data
   })

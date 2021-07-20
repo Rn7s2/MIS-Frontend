@@ -153,7 +153,7 @@ export function modifyMedicine (form) {
 }
 
 export function addMedicine (data) {
-  request({
+  return request({
     url: '/medicine/addMedicine',
     method: 'post',
     data: data
