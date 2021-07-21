@@ -103,6 +103,15 @@ const frameIn = [
         },
         component: _import('prescription/page2')
       },
+      {
+        path: 'prescription/page3',
+        name: 'prescriptionPage3',
+        meta: {
+          title: '添加处方',
+          auth: true
+        },
+        component: _import('prescription/page3')
+      },
       // 系统 前端日志
       {
         path: 'log',

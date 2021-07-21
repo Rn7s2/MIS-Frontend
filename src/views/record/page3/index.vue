@@ -57,10 +57,10 @@
                     v-model="modifyDialogForm.method" auto-complete="off"
                     placeholder="请输入处理"></el-input>
         </el-form-item>
-        <el-form-item label="医嘱">
+        <el-form-item label="嘱">
           <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 4}"
                     v-model="modifyDialogForm.note" auto-complete="off"
-                    placeholder="请输入医嘱"></el-input>
+                    placeholder="请输入建议"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">

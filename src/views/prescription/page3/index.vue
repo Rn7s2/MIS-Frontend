@@ -95,6 +95,7 @@ export default {
       pendingTableData: [],
       medicineDialogVisible: false,
       prescription: {
+        recordID: 0,
         patient: {
           name: '',
           gender: '男',
@@ -122,6 +123,9 @@ export default {
   },
   created () {
     this.updateMedicineData()
+    this.prescription.recordID = this.$route.query.id
+    this.prescription.patient = this.$route.query.patient
+    this.makePreview()
   },
   methods: {
     handleSearch () {
@@ -262,6 +266,9 @@ export default {
         this.preview = setContent(this.preview, '年龄：', this.prescription.patient.age)
         this.preview = setContent(this.preview, '时间：', getLocaleISODateStringFromDate(this.prescription.date))
         this.preview = setContent(this.preview, '诊断：', this.prescription.patient.diagnosis)
+        if (this.prescription.recordID !== 0) {
+          this.preview = setContent(this.preview, '处方号：', this.prescription.recordID)
+        }
         this.preview = setContent(this.preview, '药品费：', totalPrice)
 
         let itemTable = ''

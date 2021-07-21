@@ -61,9 +61,59 @@ export default {
       })
     },
     handleClick (id, operation) {
+      function getContentPosition (text, str, isDiagnosis) {
+        let cnt = 0
+        const ret = {
+          begin: -1,
+          end: -1
+        }
+        for (let i = text.indexOf(str + '</span></strong>'); i < text.length; i++) {
+          if (text[i] === '>') {
+            cnt++
+          }
+          if (isDiagnosis) {
+            if (cnt === 6 && ret.begin === -1) {
+              ret.begin = (i + 2)
+            }
+            if (cnt === 7) {
+              ret.end = (i - 4)
+              break
+            }
+          } else {
+            if (cnt === 5 && ret.begin === -1) {
+              ret.begin = (i + 2)
+            }
+            if (cnt === 6) {
+              ret.end = (i - 5)
+              break
+            }
+          }
+        }
+        return ret
+      }
       if (operation === 0) {
         // 按病历添加处方
-        this.$alert('功能未实现，在处方管理->添加处方写完后再完成')
+        const patient = {
+          name: '',
+          gender: '',
+          age: 0,
+          diagnosis: ''
+        }
+        this.$store.commit('record/record/fetchRecordByIDData', { id: id })
+        setTimeout(() => {
+          const recordText = this.$store.getters['record/record/getRecordByIDData']
+          let pos = getContentPosition(recordText, '姓名：')
+          patient.name = recordText.slice(pos.begin, pos.end)
+          pos = getContentPosition(recordText, '性别：')
+          patient.gender = recordText.slice(pos.begin, pos.end)
+          pos = getContentPosition(recordText, '年龄：')
+          patient.age = recordText.slice(pos.begin, pos.end)
+          pos = getContentPosition(recordText, '主要诊断：', true)
+          patient.diagnosis = recordText.slice(pos.begin, pos.end)
+        }, GLOBAL_TIMEOUT)
+        setTimeout(() => {
+          this.$router.push({ path: '/prescription/page3', query: { id: id, patient: patient } })
+        }, GLOBAL_TIMEOUT + 300)
       } else if (operation === 1) {
         this.modifyID = id
         this.$store.commit('record/record/fetchRecordByIDData', { id: id })
