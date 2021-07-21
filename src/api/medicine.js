@@ -98,20 +98,13 @@ function modifyMedicineMock (form) {
 function addMedicineMock (data) {
   return 'Success'
 }
-
-Mock.mock('/api/medicine/getAllMedicine', 'get', getAllMedicineMock)
-Mock.mock('/api/medicine/getHistoryByID', 'post', getHistoryByIDMock)
-Mock.mock('/api/medicine/getHistoryOverview', 'post', getHistoryOverviewMock)
-Mock.mock('/api/medicine/increaseMedicineNumber', 'post', increaseMedicineNumberMock)
-Mock.mock('/api/medicine/modifyMedicine', 'post', modifyMedicineMock)
-Mock.mock('/api/medicine/addMedicine', 'post', addMedicineMock)
 /// mock 数据生成结束
 
 /// 接口开始
 // [ { id, name,... }, ... ]
 export function getAllMedicine () {
   return request({
-    url: '/medicine/getAllMedicine',
+    url: '/cgi-bin/medicine/getAllMedicine',
     method: 'get'
   })
 }
@@ -119,7 +112,7 @@ export function getAllMedicine () {
 // { stockIn, stockOut, history: [ { date, number }, ... ] }
 export function getHistoryByID (data) {
   return request({
-    url: '/medicine/getHistoryByID',
+    url: '/cgi-bin/medicine/getHistoryByID',
     method: 'post',
     data: data
   })
@@ -128,7 +121,7 @@ export function getHistoryByID (data) {
 // [ { id, name, code, price, in, out }, ... ]
 export function getHistoryOverview (data) {
   return request({
-    url: '/medicine/getHistoryOverview',
+    url: '/cgi-bin/medicine/getHistoryOverview',
     method: 'post',
     data: data
   })
@@ -136,7 +129,7 @@ export function getHistoryOverview (data) {
 
 export function increaseMedicineNumber (data) {
   return request({
-    url: '/medicine/increaseMedicine',
+    url: '/cgi-bin/medicine/increaseMedicine',
     method: 'post',
     data: data
   })
@@ -144,7 +137,7 @@ export function increaseMedicineNumber (data) {
 
 export function modifyMedicine (form) {
   return request({
-    url: '/medicine/modifyMedicine',
+    url: '/cgi-bin/medicine/modifyMedicine',
     method: 'post',
     data: {
       form: form
@@ -154,7 +147,7 @@ export function modifyMedicine (form) {
 
 export function addMedicine (data) {
   return request({
-    url: '/medicine/addMedicine',
+    url: '/cgi-bin/medicine/addMedicine',
     method: 'post',
     data: data
   })

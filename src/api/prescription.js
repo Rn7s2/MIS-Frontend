@@ -83,25 +83,19 @@ function getPendingPrescriptionListMock () {
     }
   ]
 }
-
-Mock.mock('/api/prescription/addPrescription', 'post', addPrescriptionMock)
-Mock.mock('/api/prescription/getPrescriptionList', 'get', getPrescriptionListMock)
-Mock.mock('/api/prescription/deletePrescription', 'post', deletePrescriptionMock)
-Mock.mock('/api/prescription/getPrescriptionByID', 'post', getPrescriptionByIDMock)
-Mock.mock('/api/prescription/getPendingPrescriptionList', 'get', getPendingPrescriptionListMock)
 /// mock 结束
 
 /// 接口开始
 export function getPrescriptionList () {
   return request({
-    url: '/prescription/getPrescriptionList',
+    url: '/cgi-bin/prescription/getPrescriptionList',
     method: 'get'
   })
 }
 
 export function addPrescription (data) {
   return request({
-    url: '/prescription/addPrescription',
+    url: '/cgi-bin/prescription/addPrescription',
     method: 'post',
     data: data
   })
@@ -109,7 +103,7 @@ export function addPrescription (data) {
 
 export function deletePrescription (data) {
   return request({
-    url: '/prescription/deletePrescription',
+    url: '/cgi-bin/prescription/deletePrescription',
     method: 'post',
     data: data
   })
@@ -132,7 +126,7 @@ export function deletePrescription (data) {
 */
 export function getPrescriptionByID (data) {
   return request({
-    url: '/prescription/getPrescriptionByID',
+    url: '/cgi-bin/prescription/getPrescriptionByID',
     method: 'post',
     data: data
   })
@@ -140,14 +134,14 @@ export function getPrescriptionByID (data) {
 
 export function getPendingPrescriptionList () {
   return request({
-    url: '/prescription/getPendingPrescriptionList',
+    url: '/cgi-bin/prescription/getPendingPrescriptionList',
     method: 'get'
   })
 }
 
 export function handlePrescription (data) {
   return request({
-    url: '/prescription/prescription/handlePrescription',
+    url: '/cgi-bin/prescription/handlePrescription',
     method: 'post',
     data: data
   })

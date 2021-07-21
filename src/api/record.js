@@ -125,22 +125,13 @@ function deleteRecordByIDMock () {
   return 'Success'
 }
 
-Mock.mock('/api/record/getAllTemplate', 'get', getAllTemplateMock)
-Mock.mock('/api/record/modifyTemplate', 'post', modifyTemplateMock)
-Mock.mock('/api/record/addTemplate', 'post', addTemplateMock)
-Mock.mock('/api/record/deleteTemplate', 'post', deleteTemplateMock)
-Mock.mock('/api/record/addRecord', 'post', addRecordMock)
-Mock.mock('/api/record/getRecordList', 'get', getRecordListMock)
-Mock.mock('/api/record/getRecordByID', 'post', getRecordByIDMock)
-Mock.mock('/api/record/modifyRecordByID', 'post', modifyRecordByIDMock)
-Mock.mock('/api/record/deleteRecordByID', 'post', deleteRecordByIDMock)
 /// mock 结束
 
 /// 接口开始
 // [ { id, name, content }, ... ]
 export function getAllTemplate () {
   return request({
-    url: '/record/getAllTemplate',
+    url: '/cgi-bin/record/getAllTemplate',
     method: 'get'
   })
 }
@@ -148,7 +139,7 @@ export function getAllTemplate () {
 // data里面的id没有用
 export function modifyTemplate (data) {
   return request({
-    url: '/record/modifyTemplate',
+    url: '/cgi-bin/record/modifyTemplate',
     method: 'post',
     data: data
   })
@@ -156,7 +147,7 @@ export function modifyTemplate (data) {
 
 export function addTemplate (data) {
   return request({
-    url: '/record/addTemplate',
+    url: '/cgi-bin/record/addTemplate',
     method: 'post',
     data: data
   })
@@ -164,7 +155,7 @@ export function addTemplate (data) {
 
 export function deleteTemplate (data) {
   return request({
-    url: '/record/deleteTemplate',
+    url: '/cgi-bin/record/deleteTemplate',
     method: 'post',
     data: data
   })
@@ -172,7 +163,7 @@ export function deleteTemplate (data) {
 
 export function addRecord (data) {
   return request({
-    url: '/record/addRecord',
+    url: '/cgi-bin/record/addRecord',
     method: 'post',
     data: data
   })
@@ -180,14 +171,14 @@ export function addRecord (data) {
 
 export function getRecordList () {
   return request({
-    url: '/record/getRecordList',
+    url: '/cgi-bin/record/getRecordList',
     method: 'get'
   })
 }
 
 export function getRecordByID (data) {
   return request({
-    url: '/record/getRecordByID',
+    url: '/cgi-bin/record/getRecordByID',
     method: 'post',
     data: data
   })
@@ -195,7 +186,7 @@ export function getRecordByID (data) {
 
 export function modifyRecordByID (data) {
   return request({
-    url: '/record/modifyRecordByID',
+    url: '/cgi-bin/record/modifyRecordByID',
     method: 'post',
     data: data
   })
@@ -203,7 +194,7 @@ export function modifyRecordByID (data) {
 
 export function deleteRecordByID (data) {
   return request({
-    url: '/record/deleteRecordByID',
+    url: '/cgi-bin/record/deleteRecordByID',
     method: 'post',
     data: data
   })
