@@ -5,7 +5,9 @@
 ## MIS-Frondend
 MIS的浏览器前端，基于D2Admin和Vue.js实现。 
 
-我总算见识过“异步地狱”了！
+我总算见识过“回调地狱”了！
+
+不要轻易Promise！否则你可能像我一样setTimeOut把一切交给命运。
 
 异步一时爽，除错火葬场！
 
