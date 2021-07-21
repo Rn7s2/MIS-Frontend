@@ -249,8 +249,7 @@ export default {
       setTimeout(() => {
         this.tableData = this.allMedicine
       }, GLOBAL_TIMEOUT)
-      // commit太慢，还没拿到数据你就getter，所以拿不到数据
-      // 暂时没想到更好的办法，不妨停一下吧
+      // 小本生意不promise，等一等出奇迹
     }
   }
 }
