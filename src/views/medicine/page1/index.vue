@@ -14,7 +14,7 @@
       <el-table-column prop="number" label="数量" width="50"></el-table-column>
       <el-table-column prop="unit" label="单位" width="50"></el-table-column>
       <el-table-column prop="price" label="价格" width="50"></el-table-column>
-      <el-table-column prop="expiration" label="保质期" width="95"></el-table-column>
+      <el-table-column prop="expiration" label="保质期" width="100"></el-table-column>
       <el-table-column prop="dosage" label="用法用量"></el-table-column>
       <el-table-column fixed="right" label="操作" width="190">
         <template slot-scope="scope">
@@ -111,7 +111,7 @@ export default {
         number: 0,
         unit: '',
         price: 0.0,
-        expiration: '',
+        expiration: new Date(),
         dosage: ''
       },
       historyDialogVisible: false,
@@ -218,16 +218,17 @@ export default {
           number: 0 - this.numberDialogForm.number
         })
       }
-      setTimeout(this.updateMedicineData(), GLOBAL_TIMEOUT)
       this.numberDialogForm.id = 0
       this.numberDialogForm.number = 1
       this.numberDialogForm.operation = -1
-      this.numberDialogVisible = false
+      location.reload()
     },
     handleModifyDialogAccept () {
+      if (typeof (this.modifyDialogForm.expiration) !== 'string') {
+        this.modifyDialogForm.expiration = getLocaleISODateStringFromDate(this.modifyDialogForm.expiration)
+      }
       this.$store.commit('medicine/medicine/modifyMedicineData', this.modifyDialogForm)
-      setTimeout(this.updateMedicineData(), GLOBAL_TIMEOUT)
-      this.modifyDialogVisible = false
+      location.reload()
     },
     loadHistory () {
       this.$store.commit(

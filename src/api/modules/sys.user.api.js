@@ -1,7 +1,7 @@
 import { find, assign } from 'lodash'
 
 const users = [
-  { username: 'admin', password: 'admin', uuid: 'admin-uuid', name: 'Admin' }
+  { username: 'admin', password: 'nimda', uuid: 'admin-uuid', name: 'Admin' }
 ]
 
 export default ({ service, request, serviceForMock, requestForMock, mock, faker, tools }) => ({
