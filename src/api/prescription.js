@@ -4,14 +4,14 @@ import {
 
 export function getPrescriptionList () {
   return request({
-    url: '/prescription/getPrescriptionList',
+    url: '/prescription/getPrescriptionList.rkt',
     method: 'get'
   })
 }
 
 export function addPrescription (data) {
   return request({
-    url: '/prescription/addPrescription',
+    url: '/prescription/addPrescription.rkt',
     method: 'post',
     data: data
   })
@@ -19,7 +19,7 @@ export function addPrescription (data) {
 
 export function deletePrescription (data) {
   return request({
-    url: '/prescription/deletePrescription',
+    url: '/prescription/deletePrescription.rkt',
     method: 'post',
     data: data
   })
@@ -42,7 +42,7 @@ export function deletePrescription (data) {
 */
 export function getPrescriptionByID (data) {
   return request({
-    url: '/prescription/getPrescriptionByID',
+    url: '/prescription/getPrescriptionByID.rkt',
     method: 'post',
     data: data
   })
@@ -50,14 +50,14 @@ export function getPrescriptionByID (data) {
 
 export function getPendingPrescriptionList () {
   return request({
-    url: '/prescription/getPendingPrescriptionList',
+    url: '/prescription/getPendingPrescriptionList.rkt',
     method: 'get'
   })
 }
 
 export function handlePrescription (data) {
   return request({
-    url: '/prescription/handlePrescription',
+    url: '/prescription/handlePrescription.rkt',
     method: 'post',
     data: data
   })

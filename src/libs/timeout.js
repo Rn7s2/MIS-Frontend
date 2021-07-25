@@ -1,1 +1,1 @@
-export const GLOBAL_TIMEOUT = 500
+export const GLOBAL_TIMEOUT = 800

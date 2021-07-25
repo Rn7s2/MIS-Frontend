@@ -4,14 +4,14 @@ import {
 
 export function getAllMedicine () {
   return request({
-    url: '/medicine/getAllMedicine',
+    url: '/medicine/getAllMedicine.cgi',
     method: 'get'
   })
 }
 
 export function getHistoryByID (data) {
   return request({
-    url: '/medicine/getHistoryByID',
+    url: '/medicine/getHistoryByID.cgi',
     method: 'post',
     data: data
   })
@@ -19,7 +19,7 @@ export function getHistoryByID (data) {
 
 export function getHistoryOverview (data) {
   return request({
-    url: '/medicine/getHistoryOverview',
+    url: '/medicine/getHistoryOverview.cgi',
     method: 'post',
     data: data
   })
@@ -27,7 +27,7 @@ export function getHistoryOverview (data) {
 
 export function increaseMedicineNumber (data) {
   return request({
-    url: '/medicine/increaseMedicine',
+    url: '/medicine/increaseMedicine.cgi',
     method: 'post',
     data: data
   })
@@ -35,7 +35,7 @@ export function increaseMedicineNumber (data) {
 
 export function modifyMedicine (form) {
   return request({
-    url: '/medicine/modifyMedicine',
+    url: '/medicine/modifyMedicine.cgi',
     method: 'post',
     data: {
       form: form
@@ -45,7 +45,7 @@ export function modifyMedicine (form) {
 
 export function addMedicine (data) {
   return request({
-    url: '/medicine/addMedicine',
+    url: '/medicine/addMedicine.cgi',
     method: 'post',
     data: data
   })
