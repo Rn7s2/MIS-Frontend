@@ -267,7 +267,7 @@ export default {
         this.preview = setContent(this.preview, '时间：', getLocaleISODateStringFromDate(this.prescription.date))
         this.preview = setContent(this.preview, '诊断：', this.prescription.patient.diagnosis)
         if (this.prescription.recordID !== 0) {
-          this.preview = setContent(this.preview, '处方号：', this.prescription.recordID)
+          this.preview = setContent(this.preview, '门诊号：', this.prescription.recordID)
         }
         this.preview = setContent(this.preview, '药品费：', totalPrice)
 

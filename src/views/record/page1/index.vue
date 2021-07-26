@@ -73,18 +73,18 @@ export default {
           }
           if (isDiagnosis) {
             if (cnt === 6 && ret.begin === -1) {
-              ret.begin = (i + 2)
+              ret.begin = (i + 1)
             }
             if (cnt === 7) {
-              ret.end = (i - 4)
+              ret.end = (i - 3)
               break
             }
           } else {
             if (cnt === 5 && ret.begin === -1) {
-              ret.begin = (i + 2)
+              ret.begin = (i + 1)
             }
             if (cnt === 6) {
-              ret.end = (i - 5)
+              ret.end = (i - 4)
               break
             }
           }
@@ -125,9 +125,7 @@ export default {
         }, GLOBAL_TIMEOUT / 2)
       } else if (operation === 2) {
         this.$store.commit('record/record/deleteRecordByIDData', { id: id })
-        setTimeout(() => {
-          this.updateData()
-        }, GLOBAL_TIMEOUT)
+        location.reload()
       }
     },
     handleModifyDialogAccept () {
@@ -137,6 +135,7 @@ export default {
       })
       this.$alert('已提交')
       this.modifyDialogVisible = false
+      location.reload()
     },
     updateData () {
       this.$store.commit('record/record/fetchRecordListData')

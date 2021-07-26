@@ -118,9 +118,7 @@ export default {
         this.modifyDialogVisible = true
       } else {
         this.$store.commit('record/record/deleteTemplateData', { id: row.id })
-        setTimeout(() => {
-          this.updateData()
-        }, GLOBAL_TIMEOUT)
+        location.reload()
       }
     },
     handleAddTemplate () {
@@ -149,11 +147,7 @@ export default {
         } else if (this.operation === 1) {
           this.$store.commit('record/record/addTemplateData', this.modifyDialogForm)
         }
-        setTimeout(() => {
-          this.updateData()
-        }, GLOBAL_TIMEOUT)
-        this.operation = -1
-        this.modifyDialogVisible = false
+        location.reload()
       } else {
         this.$message('未填写必填项目，无法提交！')
       }

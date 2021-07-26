@@ -9,7 +9,6 @@ export function getAllTemplate () {
   })
 }
 
-// data里面的id没有用
 export function modifyTemplate (data) {
   return request({
     url: '/record/modifyTemplate.rkt',
@@ -18,6 +17,7 @@ export function modifyTemplate (data) {
   })
 }
 
+// data里面的id没有用
 export function addTemplate (data) {
   return request({
     url: '/record/addTemplate.rkt',
