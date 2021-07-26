@@ -4,7 +4,7 @@ import {
 
 export function getAllTemplate () {
   return request({
-    url: '/record/getAllTemplate.lisp',
+    url: '/record/getAllTemplate.rkt',
     method: 'get'
   })
 }
@@ -12,7 +12,7 @@ export function getAllTemplate () {
 // data里面的id没有用
 export function modifyTemplate (data) {
   return request({
-    url: '/record/modifyTemplate.lisp',
+    url: '/record/modifyTemplate.rkt',
     method: 'post',
     data: data
   })
@@ -20,7 +20,7 @@ export function modifyTemplate (data) {
 
 export function addTemplate (data) {
   return request({
-    url: '/record/addTemplate.lisp',
+    url: '/record/addTemplate.rkt',
     method: 'post',
     data: data
   })
@@ -28,7 +28,7 @@ export function addTemplate (data) {
 
 export function deleteTemplate (data) {
   return request({
-    url: '/record/deleteTemplate.lisp',
+    url: '/record/deleteTemplate.rkt',
     method: 'post',
     data: data
   })
@@ -36,7 +36,7 @@ export function deleteTemplate (data) {
 
 export function addRecord (data) {
   return request({
-    url: '/record/addRecord.lisp',
+    url: '/record/addRecord.rkt',
     method: 'post',
     data: data
   })
@@ -44,14 +44,14 @@ export function addRecord (data) {
 
 export function getRecordList () {
   return request({
-    url: '/record/getRecordList.lisp',
+    url: '/record/getRecordList.rkt',
     method: 'get'
   })
 }
 
 export function getRecordByID (data) {
   return request({
-    url: '/record/getRecordByID.lisp',
+    url: '/record/getRecordByID.rkt',
     method: 'post',
     data: data
   })
@@ -59,7 +59,7 @@ export function getRecordByID (data) {
 
 export function modifyRecordByID (data) {
   return request({
-    url: '/record/modifyRecordByID.lisp',
+    url: '/record/modifyRecordByID.rkt',
     method: 'post',
     data: data
   })
@@ -67,7 +67,7 @@ export function modifyRecordByID (data) {
 
 export function deleteRecordByID (data) {
   return request({
-    url: '/record/deleteRecordByID.lisp',
+    url: '/record/deleteRecordByID.rkt',
     method: 'post',
     data: data
   })
