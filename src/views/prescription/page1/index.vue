@@ -113,7 +113,9 @@ export default {
         this.preview = setContent(this.preview, '年龄：', prescription.patient.age)
         this.preview = setContent(this.preview, '时间：', prescription.date)
         this.preview = setContent(this.preview, '处方号：', prescription.id)
-        this.preview = setContent(this.preview, '门诊号：', prescription.recordID)
+        if (typeof (prescription.recordID) === 'number') {
+          this.preview = setContent(this.preview, '门诊号：', prescription.recordID)
+        }
         this.preview = setContent(this.preview, '诊断：', prescription.patient.diagnosis)
         this.preview = setContent(this.preview, '药品费：', totalPrice)
 
