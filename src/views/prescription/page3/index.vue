@@ -292,6 +292,9 @@ export default {
     },
     addPrescription () {
       if (this.isFormValid()) {
+        if (typeof (this.prescription.date) !== 'string') {
+          this.prescription.date = getLocaleISODateStringFromDate(this.prescription.date)
+        }
         this.$store.commit('prescription/prescription/addPrescriptionData', this.prescription)
         this.$alert('已提交')
       } else {
