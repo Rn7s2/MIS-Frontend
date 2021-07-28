@@ -89,7 +89,7 @@ export default {
     },
     handleConfirmDialogAccept () {
       if (this.isCanStockOut()) {
-        this.$store.commit('prescription/prescription/handlePrescription', { id: this.currentPrescription })
+        this.$store.commit('prescription/prescription/handlePrescriptionData', { id: this.currentPrescription })
         this.currentPrescription = 0
         this.confirmDialogVisible = false
         setTimeout(() => {
@@ -107,7 +107,7 @@ export default {
         for (let i = 0; i < this.pendingPrescriptionList.length; i++) {
           this.tableData.push({
             id: this.pendingPrescriptionList[i].id,
-            patient: this.pendingPrescriptionList[i].patient.name,
+            patient: this.pendingPrescriptionList[i].name,
             date: this.pendingPrescriptionList[i].date
           })
         }

@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { monthAfter } from '@/libs/localdate'
+import { monthAfter, getLocaleISODateStringFromDate } from '@/libs/localdate'
 
 export default {
   name: 'page3',
@@ -72,6 +72,9 @@ export default {
     },
     addMedicine () {
       if (this.isFormValid()) {
+        if (typeof (this.form.expiration) !== 'string') {
+          this.form.expiration = getLocaleISODateStringFromDate(this.form.expiration)
+        }
         this.$store.commit('medicine/medicine/addMedicineData', this.form)
         this.$alert('已提交')
       } else {

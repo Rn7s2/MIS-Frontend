@@ -149,7 +149,7 @@ export default {
         }, GLOBAL_TIMEOUT)
       } else if (operation === 1) {
         this.$store.commit('prescription/prescription/deletePrescriptionData', { id: id })
-        this.updateData()
+        location.reload()
       }
     },
     updateData () {

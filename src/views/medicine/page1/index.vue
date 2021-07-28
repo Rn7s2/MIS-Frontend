@@ -25,6 +25,7 @@
         </template>
       </el-table-column>
     </el-table>
+    <center><el-button @click="showFullData" type="primary">显示全部</el-button></center>
     <el-dialog title="输入数量" :visible.sync="numberDialogVisible">
       <el-form :model="numberDialogForm">
         <el-form-item label="数量">
@@ -97,6 +98,7 @@ export default {
     return {
       str: '',
       tableData: [],
+      isShowFullData: false,
       numberDialogVisible: false,
       numberDialogForm: {
         id: 0,
@@ -133,6 +135,12 @@ export default {
     }
   },
   methods: {
+    showFullData () {
+      this.isShowFullData = true
+      setTimeout(() => {
+        this.updateMedicineData()
+      }, GLOBAL_TIMEOUT)
+    },
     drawChart () {
       // 先尝试删除之前的实例
       this.$echarts.init(document.getElementById('historyChart')).dispose()
@@ -248,7 +256,14 @@ export default {
     updateMedicineData () {
       this.$store.commit('medicine/medicine/fetchMedicineData')
       setTimeout(() => {
-        this.tableData = this.allMedicine
+        if (this.isShowFullData) {
+          this.tableData = this.allMedicine
+        } else {
+          this.tableData = []
+          for (let i = 0; i < 30; i++) {
+            this.tableData.push(this.allMedicine[i])
+          }
+        }
       }, GLOBAL_TIMEOUT)
       // 小本生意不promise，等一等出奇迹
     }
