@@ -67,25 +67,24 @@ export default {
           begin: -1,
           end: -1
         }
+	let isContentBegun = false
         for (let i = text.indexOf(str + '</span></strong>'); i < text.length; i++) {
           if (text[i] === '>') {
             cnt++
           }
+	  if (isContentBegun && text[i] === '<') {
+            ret.end = i
+	    break
+	  }
           if (isDiagnosis) {
-            if (cnt === 6 && ret.begin === -1) {
+            if (cnt === 5 && ret.begin === -1) {
               ret.begin = (i + 1)
-            }
-            if (cnt === 7) {
-              ret.end = (i - 3)
-              break
+	      isContentBegun = true
             }
           } else {
             if (cnt === 5 && ret.begin === -1) {
               ret.begin = (i + 1)
-            }
-            if (cnt === 6) {
-              ret.end = (i - 4)
-              break
+	      isContentBegun = true
             }
           }
         }
