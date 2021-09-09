@@ -5,13 +5,6 @@
 ## MIS-Frondend
 MIS的浏览器前端，基于D2Admin和Vue.js实现。 
 
-我总算见识过“回调地狱”了！
-
-异步一时爽，除错火葬场！
-
-我直接setTimeOut等等出奇迹，
-小本生意不Promise也成
-
 ### TODO List
 - [x] 在Windows平台上测试“添加处方”和“查看处方”中UEditor的宽度及打印效果
 - [x] 完成“添加处方”和“查看处方”中的makePreview函数
