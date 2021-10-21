@@ -1,4 +1,6 @@
 # MIS 医疗信息系统
+[![Node.js CI](https://github.com/Rn7s2/MIS-Frontend/actions/workflows/node.js.yml/badge.svg)](https://github.com/Rn7s2/MIS-Frontend/actions/workflows/node.js.yml)
+
 适用于门诊等医疗机构的集成式库存、病历和处方管理系统。
 采用前后端分离架构，属于个人学习项目。
 
